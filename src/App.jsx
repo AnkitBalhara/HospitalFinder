@@ -1,25 +1,24 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/SignupPage";
-// import Home from "./pages/Home";
-// import ProtectedRoute from "./components/ProtectedRoute"; // For authentication
-
-const router = createBrowserRouter([
-  // { path: "/", element: <Home /> },
-  { path: "/login", element: <Login /> },
-  { path: "/signup", element: <Signup /> },
-  // {
-  //   path: "/dashboard",
-  //   element: (
-      // <ProtectedRoute>
-      //   <Dashboard />
-      // </ProtectedRoute>
-    // ),
-  // },
-]);
+import Home from "./pages/Home";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
