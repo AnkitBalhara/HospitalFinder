@@ -11,13 +11,34 @@ export default function Example() {
             className="mx-auto h-20 w-auto shadow-[0_0_10px_rgba(0,0,0,0.8)] rounded-lg border border-indigo-500"
           />
           <h2 className="mt-5 text-center text-2xl font-bold tracking-tight text-gray-900">
-            Login
+            Register Now
           </h2>
 
           <div className="mt-10">
             <form action="#" method="POST" className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-900">
+                <label
+                  htmlFor="fullName"
+                  className="block text-sm font-medium text-gray-900"
+                >
+                  UserName
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    autoComplete="fullName"
+                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-400 focus:border-indigo-600 focus:ring-indigo-600 sm:text-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-900"
+                >
                   Email address
                 </label>
                 <div className="mt-2">
@@ -34,14 +55,12 @@ export default function Example() {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-900">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-900"
+                  >
                     Password
                   </label>
-                  <div className="text-sm">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                      Forgot password?
-                    </a>
-                  </div>
                 </div>
                 <div className="mt-2">
                   <input
@@ -64,7 +83,10 @@ export default function Example() {
                   required
                   className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
                 />
-                <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+                <label
+                  htmlFor="terms"
+                  className="ml-2 block text-sm text-gray-900"
+                >
                   I agree to the{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
                     Terms and Conditions
@@ -77,7 +99,7 @@ export default function Example() {
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 cursor-pointer"
                 >
-                  Sign in
+                  Sign Up
                 </button>
               </div>
             </form>
@@ -93,17 +115,17 @@ export default function Example() {
                   alt="Google logo"
                   className="h-5 w-5 mr-2 "
                 />
-                Sign in with Google
+                Sign up with Google
               </button>
             </div>
 
             <p className="mt-10 text-center text-sm text-gray-500">
-              Not a member?{" "}
+              Already a member?{" "}
               <Link
-                to={"/signup"}
+                to={"/login"}
                 className="font-semibold text-indigo-600 hover:text-indigo-500"
               >
-                Register Now
+                Login Now
               </Link>
             </p>
           </div>
