@@ -6,7 +6,7 @@ export default function LoginPage() {
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white p-6 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.8)]">
         <h1 className="text-4xl font-extrabold text-gray-800 leading-tight text-center">
-          <span className="text-blue-500">MediCare</span>
+          <span className="text-blue-500 shadow-lg border-b rounded-lg">MediCare</span>
         </h1>
           {/* <img
             alt="Your Company"
