@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+
 
 export default function SignupPage() {
+  const handleSuccess = (credenatialResponse) => {
+    console.log("Successfully login", credenatialResponse);
+  };
+  const handleError = (credenatialResponse) => {
+    console.log("Unsuccessfully login", credenatialResponse);
+  };
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-6 lg:px-8">
@@ -100,7 +108,7 @@ export default function SignupPage() {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 cursor-pointer"
+                  className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 cursor-pointer"
                 >
                   Sign Up
                 </button>
@@ -108,19 +116,17 @@ export default function SignupPage() {
             </form>
 
             {/* Google Authentication Button */}
-            <div className="mt-6">
-              <button
-                type="button"
-                className="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-semibold text-gray-700 shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 cursor-pointer"
-              >
-                <img
-                  src="https://static-00.iconduck.com/assets.00/google-icon-1024x1024-ilkrdfcp.png"
-                  alt="Google logo"
-                  className="h-5 w-5 mr-2 "
-                />
-                Sign up with Google
-              </button>
+            <div className="mt-6 flex w-full justify-center">
+              <div className="flex items-center space-x-2 rounded-md border border-gray-300 bg-white text-sm font-semibold text-gray-700 shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 cursor-pointer">
+                <GoogleOAuthProvider clientId="577703954361-c1shtitq9o97akbsk25vamb4retauqj8.apps.googleusercontent.com">
+                  <GoogleLogin
+                    onSuccess={handleSuccess}
+                    onError={handleError}
+                  />
+                </GoogleOAuthProvider>
+              </div>
             </div>
+
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Already a member?{" "}
