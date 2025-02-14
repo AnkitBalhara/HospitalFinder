@@ -51,7 +51,7 @@ const Home = () => {
       <div
         className="w-full lg:w-1/2 h-[50vh] lg:h-[90vh] bg-cover bg-center rounded-2xl mt-5 lg:mt-0 lg:ml-5 shadow-lg"
         style={{
-          backgroundImage:"url(public/Bg-image.webp)"
+          backgroundImage:"url(/Bg-image.webp)"
         }}
       />
     </div>
