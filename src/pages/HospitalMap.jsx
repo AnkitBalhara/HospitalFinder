@@ -12,7 +12,7 @@ export default function HospitalMap() {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCgmUq-apjxkIOuM1GkOU5nP18hNq5XVI0",
+    googleMapsApiKey:  import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   useEffect(() => {
